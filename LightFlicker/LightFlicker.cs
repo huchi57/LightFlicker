@@ -42,7 +42,7 @@ public class LightFlicker : MonoBehaviour
         Custom
     }
 
-    [SerializeField] private string _pattern = default;
+    [SerializeField] private string _pattern = _normal;
     [SerializeField] private Preset _preset = Preset.Normal;
     [SerializeField] private float _normalBrightness = 1;
 
