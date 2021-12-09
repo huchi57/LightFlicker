@@ -13,21 +13,29 @@ public class LightFlickerEditor : Editor
     private SerializedProperty _patternDuration = default;
     private SerializedProperty _lerp = default;
     private SerializedProperty _lerpSpeed = default;
+    
 
     private GUIStyle _cacheStyle = default;
     private GUIStyle _style = default;
     private AnimationCurve _patternCurve = default;
-    private Rect _graphRect = default;
 
-    private void Awake()
+    private SerializedProperty Pattern { get => GetPropertyByName(_pattern, nameof(_pattern)); }
+    private SerializedProperty Preset { get => GetPropertyByName(_preset, nameof(_preset)); }
+    private SerializedProperty NormalBrightness { get => GetPropertyByName(_normalBrightness, nameof(_normalBrightness)); }
+    private SerializedProperty PatternDuration { get => GetPropertyByName(_patternDuration, nameof(_patternDuration)); }
+    private SerializedProperty Lerp { get => GetPropertyByName(_lerp, nameof(_lerp)); }
+    private SerializedProperty LerpSpeed { get => GetPropertyByName(_lerpSpeed, nameof(_lerpSpeed)); }
+    
+    private AnimationCurve PatternCurve 
     {
-        _pattern = serializedObject.FindProperty(nameof(_pattern));
-        _preset = serializedObject.FindProperty(nameof(_preset));
-        _normalBrightness = serializedObject.FindProperty(nameof(_normalBrightness));
-        _patternDuration = serializedObject.FindProperty(nameof(_patternDuration));
-        _lerp = serializedObject.FindProperty(nameof(_lerp));
-        _lerpSpeed = serializedObject.FindProperty(nameof(_lerpSpeed));
-        _patternCurve = new AnimationCurve();
+        get
+        {
+            if (_patternCurve == null)
+            {
+                _patternCurve = new AnimationCurve();
+            }
+            return _patternCurve;
+        }
     }
 
     public override void OnInspectorGUI()
@@ -45,23 +53,32 @@ public class LightFlickerEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
+    private SerializedProperty GetPropertyByName(SerializedProperty property, string name)
+    {
+        if (property == null)
+        {
+            property = serializedObject.FindProperty(name);
+        }
+        return property;
+    }
+
     private Keyframe[] GetKeyframes()
     {
         var keyframes = new List<Keyframe>();
-        for (int i = 0; i < _pattern.arraySize; i++)
+        for (int i = 0; i < Pattern.arraySize; i++)
         {
             keyframes.Add
             (
                 new Keyframe 
                 { 
                     time = i, 
-                    value = (_pattern.stringValue[i] - 'a') / 12.5f
+                    value = (Pattern.stringValue[i] - 'a') / 12.5f
                 }
             );
         }
 
         // "Magic Keyframe" for array size = 1
-        if (_pattern.arraySize <= 1)
+        if (Pattern.arraySize <= 1)
         {
             keyframes.Add(new Keyframe { time = 1, value = keyframes[0].value });
         }
@@ -82,8 +99,8 @@ public class LightFlickerEditor : Editor
             }
 
             GUI.enabled = false;
-            _patternCurve.keys = GetKeyframes();
-            EditorGUILayout.CurveField("", _patternCurve, Color.yellow, new Rect(0, 0, _pattern.arraySize - 1, 2), GUILayout.ExpandWidth(true), GUILayout.Height(_graphHeight));
+            PatternCurve.keys = GetKeyframes();
+            EditorGUILayout.CurveField("", PatternCurve, Color.yellow, new Rect(0, 0, Pattern.arraySize - 1, 2), GUILayout.ExpandWidth(true), GUILayout.Height(_graphHeight));
             GUI.enabled = true;
         }
     }
@@ -106,14 +123,14 @@ public class LightFlickerEditor : Editor
     private void DrawProperties()
     {
         GUILayout.Label("Flicker Pattern", EditorStyles.boldLabel);
-        EditorGUILayout.PropertyField(_pattern);
-        EditorGUILayout.PropertyField(_preset);
-        EditorGUILayout.PropertyField(_normalBrightness);
+        EditorGUILayout.PropertyField(Pattern);
+        EditorGUILayout.PropertyField(Preset);
+        EditorGUILayout.PropertyField(NormalBrightness);
 
         GUILayout.Space(10);
         GUILayout.Label("Speed Settings", EditorStyles.boldLabel);
-        EditorGUILayout.PropertyField(_patternDuration);
-        EditorGUILayout.PropertyField(_lerp);
-        EditorGUILayout.PropertyField(_lerpSpeed);
+        EditorGUILayout.PropertyField(PatternDuration);
+        EditorGUILayout.PropertyField(Lerp);
+        EditorGUILayout.PropertyField(LerpSpeed);
     }
 }
