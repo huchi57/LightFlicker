@@ -14,6 +14,7 @@ public class LightFlickerEditor : Editor
     private SerializedProperty _lerp = default;
     private SerializedProperty _lerpSpeed = default;
     
+
     private GUIStyle _cacheStyle = default;
     private GUIStyle _style = default;
     private AnimationCurve _patternCurve = default;
@@ -32,6 +33,8 @@ public class LightFlickerEditor : Editor
             if (_patternCurve == null)
             {
                 _patternCurve = new AnimationCurve();
+                _patternCurve.preWrapMode = WrapMode.Loop;
+                _patternCurve.postWrapMode = WrapMode.Loop;
             }
             return _patternCurve;
         }
@@ -71,7 +74,9 @@ public class LightFlickerEditor : Editor
                 new Keyframe 
                 { 
                     time = i, 
-                    value = (Pattern.stringValue[i] - 'a') / 12.5f
+                    value = (Pattern.stringValue[i] - 'a') / 12.5f,
+                    inTangent = 0,
+                    outTangent = 0,
                 }
             );
         }
