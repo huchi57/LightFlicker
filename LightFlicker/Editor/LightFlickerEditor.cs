@@ -14,7 +14,6 @@ public class LightFlickerEditor : Editor
     private SerializedProperty _lerp = default;
     private SerializedProperty _lerpSpeed = default;
     
-
     private GUIStyle _cacheStyle = default;
     private GUIStyle _style = default;
     private AnimationCurve _patternCurve = default;
