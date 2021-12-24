@@ -25,6 +25,12 @@ public class LightFlicker : MonoBehaviour
     private LightFlickerUtility.Preset _cachedPreset = default;
     private float _timer = 0;
 
+    // Public properties
+    public float NormalBrightness { get => _normalBrightness; set => _normalBrightness = value; }
+    public float PatternDuration { get => _patternDuration; set => _patternDuration = value; }
+    public bool Lerp { get => _lerp; set => _lerp = value; }
+    public float Progress => ((_timer / _patternDuration) * _pattern.Length - 1) / _pattern.Length;
+    
     public string Pattern 
     { 
         get => _pattern; 
@@ -55,11 +61,6 @@ public class LightFlicker : MonoBehaviour
             return _light;
         }
     }
-
-    public float NormalBrightness { get => _normalBrightness; set => _normalBrightness = value; }
-    public float PatternDuration { get => _patternDuration; set => _patternDuration = value; }
-    public bool Lerp { get => _lerp; set => _lerp = value; }
-    public float Progress => ((_timer / _patternDuration) * _pattern.Length - 1) / _pattern.Length;
 
     private string RestrictToLowercaseAlphabets(string input)
     {
