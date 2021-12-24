@@ -1,28 +1,29 @@
-using UnityEngine;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using UnityEngine;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(Light))]
 public class LightFlicker : MonoBehaviour
 {
-    //[Header("Flicker Pattern (a: 0% / m: 100% / z: 200% Normal Brightness)")]
+    // [Header("Flicker Pattern (a: 0% / m: 100% / z: 200% Normal Brightness)")]
     [SerializeField] private string _pattern = "m";
     [SerializeField] private LightFlickerUtility.Preset _preset = LightFlickerUtility.Preset.Normal;
     [SerializeField] private float _normalBrightness = 1;
 
-    //[Header("Speed Settings")]
+    // [Header("Speed Settings")]
     [SerializeField] private float _patternDuration = 1;
     [SerializeField] private bool _lerp = true;
-    [SerializeField] private float _lerpSpeed = 10;
 
+    // Serialized for custom editor
     [SerializeField] [HideInInspector] private bool _playingInEditMode = false;
+    [SerializeField] [HideInInspector] private AnimationCurve _intensityCurve = new AnimationCurve();
 
+    // Internal variables
     private Light _light = default;
     private string _cachedPattern = default;
     private LightFlickerUtility.Preset _cachedPreset = default;
-    private int _index = 0;
     private float _timer = 0;
-    private float _targetIntensity = 0;
 
     public string Pattern 
     { 
@@ -58,7 +59,6 @@ public class LightFlicker : MonoBehaviour
     public float NormalBrightness { get => _normalBrightness; set => _normalBrightness = value; }
     public float PatternDuration { get => _patternDuration; set => _patternDuration = value; }
     public bool Lerp { get => _lerp; set => _lerp = value; }
-    public float LerpSpeed { get => _lerpSpeed; set => _lerpSpeed = value < 0 ? 0 : value; }
     public float Progress => ((_timer / _patternDuration) * _pattern.Length - 1) / _pattern.Length;
 
     private string RestrictToLowercaseAlphabets(string input)
@@ -89,15 +89,13 @@ public class LightFlicker : MonoBehaviour
             _timer = 0;
         }
 
-        _index = (int)((_timer / _patternDuration) * _pattern.Length - 1);
-        _index = Mathf.Clamp(_index, 0, _pattern.Length - 1);
-        _targetIntensity = (_pattern[_index] - 'a') / 12.5f * _normalBrightness;
-        Light.intensity = _lerp ? Mathf.Lerp(Light.intensity, _targetIntensity, _lerpSpeed * Time.deltaTime) : _targetIntensity;
+        var time = (_timer / _patternDuration) * _pattern.Length - 1;
+        Light.intensity = _intensityCurve.Evaluate(_lerp ? time : Mathf.Floor(time)) * _normalBrightness;
     }
 
     private void Awake()
     {
-        _index = Random.Range(0, _pattern.Length);
+        _timer = Random.Range(0, _patternDuration);
     }
 
     private void OnValidate()
@@ -119,21 +117,51 @@ public class LightFlicker : MonoBehaviour
             _cachedPreset = _preset;
             _pattern = LightFlickerUtility.GetPatterFromPreset(_preset, _pattern);
             _cachedPattern = _pattern;
+            RecalculateIntensityCurve();
         }
 
-        if (_cachedPattern != _pattern)
+        if (!_cachedPattern.Equals(_pattern))
         {
             _cachedPattern = _pattern;
             _preset = LightFlickerUtility.Preset.Custom;
             _cachedPreset = _preset;
-        }
-
-        if (_lerpSpeed < 0)
-        {
-            _lerpSpeed = 0;
+            RecalculateIntensityCurve();
         }
 
         Light.intensity = _normalBrightness;
+    }
+
+    private void RecalculateIntensityCurve()
+    {
+        var keyframes = new List<Keyframe>();
+        for (int i = 0; i < _pattern.Length; i++)
+        {
+            keyframes.Add
+            (
+                new Keyframe
+                {
+                    time = i,
+                    value = (_pattern[i] - 'a') / 12.5f,
+                    inTangent = 0,
+                    outTangent = 0,
+                }
+            );
+        }
+        
+        // "Magic Keyframe" for array size = 1
+        if (_pattern.Length <= 1)
+        {
+            keyframes.Add(new Keyframe { time = 1, value = keyframes[0].value });
+        }
+        _intensityCurve.keys = keyframes.ToArray();
+        _intensityCurve.preWrapMode = WrapMode.Loop;
+        _intensityCurve.postWrapMode = WrapMode.Loop;
+    }
+
+    private void Reset()
+    {
+        Light.intensity = _normalBrightness;
+        _playingInEditMode = false;
     }
 
 #if UNITY_EDITOR
@@ -150,9 +178,4 @@ public class LightFlicker : MonoBehaviour
     }
 #endif
 
-    private void Reset()
-    {
-        Light.intensity = _normalBrightness;
-        _playingInEditMode = false;
-    }
 }
