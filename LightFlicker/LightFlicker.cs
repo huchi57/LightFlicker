@@ -29,7 +29,7 @@ public class LightFlicker : MonoBehaviour
     public float NormalBrightness { get => _normalBrightness; set => _normalBrightness = value; }
     public float PatternDuration { get => _patternDuration; set => _patternDuration = value; }
     public bool Lerp { get => _lerp; set => _lerp = value; }
-    public float Progress => ((_timer / _patternDuration) * _pattern.Length - 1) / _pattern.Length;
+    public float Progress => _timer / _patternDuration;
     
     public string Pattern 
     { 
@@ -90,8 +90,8 @@ public class LightFlicker : MonoBehaviour
             _timer = 0;
         }
 
-        var time = (_timer / _patternDuration) * _pattern.Length - 1;
-        Light.intensity = _intensityCurve.Evaluate(_lerp ? time : Mathf.Floor(time)) * _normalBrightness;
+        var time = Mathf.Max((_timer / _patternDuration) * _intensityCurve.keys.Length - 1, 0);
+        Light.intensity = _intensityCurve.Evaluate(_lerp ? time : Mathf.Floor(time)) * _normalBrightness;  
     }
 
     private void Awake()
@@ -148,12 +148,13 @@ public class LightFlicker : MonoBehaviour
                 }
             );
         }
-        
-        // "Magic Keyframe" for array size = 1
-        if (_pattern.Length <= 1)
+
+        // "Magic Keyframe" to wrap intensity
+        if (keyframes.Count > 0)
         {
-            keyframes.Add(new Keyframe { time = 1, value = keyframes[0].value });
+            keyframes.Add(new Keyframe { time = _pattern.Length, value = keyframes[0].value, inTangent = 0, outTangent = 0 });
         }
+
         _intensityCurve.keys = keyframes.ToArray();
         _intensityCurve.preWrapMode = WrapMode.Loop;
         _intensityCurve.postWrapMode = WrapMode.Loop;
