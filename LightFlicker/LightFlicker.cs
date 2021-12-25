@@ -17,7 +17,9 @@ public class LightFlicker : MonoBehaviour
 
     // Serialized for custom editor
     [SerializeField] [HideInInspector] private bool _playingInEditMode = false;
+#if UNITY_EDITOR
     [SerializeField] [HideInInspector] private AnimationCurve _intensityCurve = new AnimationCurve();
+#endif
 
     // Internal variables
     private Light _light = default;
@@ -70,7 +72,6 @@ public class LightFlicker : MonoBehaviour
 
     private void Update()
     {
-
 #if UNITY_EDITOR
         if (!UnityEditor.EditorApplication.isPlaying && !_playingInEditMode)
         {
@@ -83,7 +84,6 @@ public class LightFlicker : MonoBehaviour
             _playingInEditMode = false;
         }
 #endif
-
         _timer += Time.deltaTime;
         if (_timer > _patternDuration)
         {
@@ -163,21 +163,24 @@ public class LightFlicker : MonoBehaviour
     private void Reset()
     {
         Light.intensity = _normalBrightness;
-        _playingInEditMode = false;
     }
 
-#if UNITY_EDITOR
     private void OnEnable()
     {
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.update += Update;
+        _playingInEditMode = false;
+#endif
         Reset();
     }
 
     private void OnDisable()
     {
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.update -= Update;
+        _playingInEditMode = false;
+#endif
         Reset();
     }
-#endif
 
 }
