@@ -8,7 +8,7 @@
 
 | Property Name      | Type    | Description                                            |
 | :---               | :---    | :---                                                   |
-| `NormalBrightness` | `float` | The Light component's intensity at 100% brightness. *This will override Light's intensensity value.* |
+| `NormalBrightness` | `float` | The Light component's intensity at 100% brightness. <br/>*This will override Light's intensensity value.* |
 | `PatternDuration`  | `float` | The duration for the pattern to iterate once.          |
 | `Lerp`             | `bool`  | Whether the light intensity should change smoothly.    |
 | `Pattern`          | `string`| The pattern of the Light component's intensity using alphabets between `a` to `z`, with `a` being 0%, `m` being 100%, and `z` being 200% intensity of the `NormalBrightness`. |
