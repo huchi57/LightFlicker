@@ -11,8 +11,8 @@ public class LightFlickerEditor : Editor
     private SerializedProperty _normalBrightness = default;
     private SerializedProperty _patternDuration = default;
     private SerializedProperty _lerp = default;
-    private SerializedProperty _playingInEditMode = default;
     private SerializedProperty _intensityCurve = default;
+    private SerializedProperty _playingInEditMode = default;
 
     private static Texture2D _red = null;
     private GUIStyle _cacheStyle = default;
@@ -24,9 +24,9 @@ public class LightFlickerEditor : Editor
     private SerializedProperty NormalBrightness { get => GetPropertyByName(_normalBrightness, nameof(_normalBrightness)); }
     private SerializedProperty PatternDuration { get => GetPropertyByName(_patternDuration, nameof(_patternDuration)); }
     private SerializedProperty Lerp { get => GetPropertyByName(_lerp, nameof(_lerp)); }
-    private SerializedProperty PlayingInEditMode { get => GetPropertyByName(_playingInEditMode, nameof(_playingInEditMode)); }
     private SerializedProperty IntensityCurve { get => GetPropertyByName(_intensityCurve, nameof(_intensityCurve)); }
-
+    private SerializedProperty PlayingInEditMode { get => GetPropertyByName(_playingInEditMode, nameof(_playingInEditMode)); }
+    
     private static Texture2D Red
     {
         get
