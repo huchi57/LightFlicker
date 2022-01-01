@@ -1,6 +1,8 @@
 # Unity Light Flicker
 A component to make Unity's Light component flicker by a sequence of alphabets. This way of implementing flickering lights is inspired by Valve, which is used in their games like Quake and Half-Life series.
 
+**:warning: PHOTOSENSITIVE WARNING: This document may contain animated GIFs with flashing images and are hidden by default. Click on the foldouts to reveal the original image.**
+
 <table>
   <tr>
     <td>
@@ -43,8 +45,6 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 ## `LightFlickerUtility.Preset` Enumerations
 
 Here are all 15 presets available to quickly achieve flickering lights. You may add your own presets under the file `Utility/LightFlickerUtility.cs`.
-
-**:warning: PHOTOSENSITIVE WARNING: The below section may contain animated GIFs with flashing images and are hidden by default. Click on the foldouts to reveal the original image.**
 
 **None**
   <table>
