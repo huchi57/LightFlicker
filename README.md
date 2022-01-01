@@ -6,10 +6,18 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 <table>
   <tr>
     <td>
-    <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Preview.png" width = 400>
+      <details>
+        <summary>(Click to show) Select from 12 sets of preset flickering patterns.</summary>
+        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-FluorescentFlicker.gif" width = 400>
+      </details>
     </td>
+  </tr>
+  <tr>
     <td>
-    <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Preview2.png" width = 400>
+      <details>
+        <summary>(Click to show) Switch between presets, typing custom patterns, and preview the changes in realtime.</summary>
+        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Editor.gif" width = 400>
+      </details>
     </td>
   </tr>
 </table>
