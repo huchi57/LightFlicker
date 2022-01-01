@@ -362,6 +362,6 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
   </table>
 
 ## References
-https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/dlls/world.cpp#L557-L605
-https://assetstore.unity.com/packages/templates/tutorials/shader-calibration-scene-25422
+- https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/dlls/world.cpp#L557-L605
+- https://assetstore.unity.com/packages/templates/tutorials/shader-calibration-scene-25422
 
