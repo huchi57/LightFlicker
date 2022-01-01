@@ -361,9 +361,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
   </tr>
   </table>
 
-## How Does it Work
-An internal timer evaluates the light intensity based on a target character from the flicker pattern.
-
-## Reference
+## References
 https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/dlls/world.cpp#L557-L605
+https://assetstore.unity.com/packages/templates/tutorials/shader-calibration-scene-25422
 
