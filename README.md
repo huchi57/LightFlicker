@@ -1,5 +1,16 @@
 # Unity Light Flicker
-A component to make Unity's Light component flicker by a sequence of alphabets. This way of flickering lights is inspired by Valve games, which is used in games like Quake and Half-Life.
+A component to make Unity's Light component flicker by a sequence of alphabets. This way of implementing flickering lights is inspired by Valve, which is used in games like Quake and Half-Life.
+
+<table>
+  <tr>
+    <td>
+    <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Preview.png" width = 400>
+    </td>
+    <td>
+    <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Preview2.png" width = 400>
+    </td>
+  </tr>
+</table>
 
 ## Installation
 1. Download the full repository (including the `Editor` folder).
@@ -351,6 +362,6 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 ## How Does it Work
 An internal timer evaluates the light intensity based on a target character from the flicker pattern.
 
-## References
+## Reference
 https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/dlls/world.cpp#L557-L605
 
