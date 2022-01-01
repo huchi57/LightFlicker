@@ -31,7 +31,7 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 | Property Name      | Type    | Description                                            |
 | :---               | :---    | :---                                                   |
 | `Pattern`          | `string`| The pattern of the Light component's intensity using alphabets between `a` to `z`, with `a` being 0%, `m` being 100%, and `z` being 200% intensity of the `NormalBrightness`. |
-| `PresetPattern`    | `LightFlickerUtility.Preset` <br/>(Custom type) | Set the `pattern` from a selected collection of presets referenced from Valve's games. |
+| `PresetPattern`    | `LightFlickerUtility.Preset`<br/>(Custom type) | Set the `pattern` from a selected collection of presets referenced from Valve's games. See the section below for the full list of available presets. |
 | `NormalBrightness` | `float` | The light intensity at 100% brightness. <br/>*Note: This will override the Light component's intensensity value.* |
 
 **Speed Settings**
