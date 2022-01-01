@@ -29,7 +29,25 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 | `PatternDuration`  | `float` | The duration for the pattern to iterate once.          |
 | `Lerp`             | `bool`  | Whether the light intensity should change smoothly.    |
 
-## Presets
+## `LightFlickerUtility.Preset`
+
+| Preset Name | Sequence | Preview |
+| -----       | -----    | -----   |
+|  None<br/>`Preset.None`  | `a`
+|  Normal<br/>`Preset.Normal`| `m`
+|  Double Brightness<br/>`Preset.DoubleBrightness` | `z`
+|  Fluorescent Flicker<br/>`Preset.FluorescentFlicker` | `mmamammmmammamamaaamammma`
+|  Slow Strobe<br/>`Preset.SlowStrobe` | `aaaaaaaazzzzzzzz`
+|  Gentle Pulse<br/>`Preset.GentlePulse` | `jklmnopqrstuvwxyzyxwvutsrqponmlkj`
+|  Slow Strong Pulse<br/>`Preset.SlowStrongPulse` | `abcdefghijklmnopqrstuvwxyzyxwvutsrqponmlkjihgfedcba`
+|  Slow Pulse Not Fade To Black<br/>`Preset.SlowPulseNotFadeToBlack` | `abcdefghijklmnopqrrqponmlkjihgfedcba`
+|  Fast Strobe<br/>`Preset.FastStrobe` | `mamamamamama`
+|  Underwater Light Mutation<br/>`Preset.UnderwaterLightMutation` | `mmnnmmnnnmmnn`
+|  Candle (First Variety)<br/>`Preset.Candle1` | `mmmmmaaaaammmmmaaaaaabcdefgabcdefg`
+|  Candle (Second Variety)<br/>`Preset.Candle2` | `mmmaaaabcdefgmmmmaaaammmaamm`
+|  Candle (Third Variety)<br/>`Preset.Candle3` | `mmmaaammmaaammmabcdefaaaammmmabcdefmmmaaaa`
+|  Flicker (First Variety)<br/>`Preset.Flicker1` | `mmnmmommommnonmmonqnmmo`
+|  Flicker (Second Variety)<br/>`Preset.Flicker2`| `nmonqnmomnmomomnon`
 
 ## How Does it Work
 An internal timer evaluates the light intensity based on a target character from the flicker pattern.
