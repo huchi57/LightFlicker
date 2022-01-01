@@ -31,6 +31,24 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 
 ## `LightFlickerUtility.Preset`
 
+<details>
+  <summary>None</summary>
+<table>
+  <tr>
+    <td>Preview</td>
+    <td><img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/flickerlight-fluorescent.gif" width = 200></td>
+  </tr>
+  <tr>    
+    <td>Preset Enum</td>
+    <td><code>LightFlickerUtility.Preset.None</code></td>
+  </tr>
+  <tr>    
+    <td>Actual Sequence</td>
+    <td><code>a</code></td>
+  </tr>
+</table>
+</details>
+
 | Preset Name | Sequence | Preview |
 | -----       | -----    | -----   |
 |  None<br/>`Preset.None`  | `a`
