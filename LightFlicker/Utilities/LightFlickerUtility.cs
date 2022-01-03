@@ -43,7 +43,7 @@ public class LightFlickerUtility
         Custom
     }
 
-    public static string GetPatterFromPreset(Preset preset, string defaultValue)
+    public static string GetPatternFromPreset(Preset preset, string defaultValue)
     {
         switch (preset)
         {
