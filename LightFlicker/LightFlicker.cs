@@ -48,7 +48,7 @@ public class LightFlicker : MonoBehaviour
         set 
         { 
             _preset = value; 
-            _pattern = LightFlickerUtility.GetPatterFromPreset(_preset, _pattern); 
+            _pattern = LightFlickerUtility.GetPatternFromPreset(_preset, _pattern); 
         } 
     }
 
@@ -116,7 +116,7 @@ public class LightFlicker : MonoBehaviour
         if (_cachedPreset != _preset)
         {
             _cachedPreset = _preset;
-            _pattern = LightFlickerUtility.GetPatterFromPreset(_preset, _pattern);
+            _pattern = LightFlickerUtility.GetPatternFromPreset(_preset, _pattern);
             _cachedPattern = _pattern;
             RecalculateIntensityCurve();
         }
