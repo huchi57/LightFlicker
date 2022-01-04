@@ -5,7 +5,7 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 
 <details>
   <summary>(Click to show) Select from 12 presets, or type in custom patterns, and preview the changes in realtime.</summary>
-  <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Editor.gif" width = 400>
+  <img src = "Readme/Readme-Editor.gif" width = 400>
 </details>
 
 ## Installation
@@ -47,7 +47,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-None.gif" width = 400>
+        <img src = "Readme/Readme-None.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -68,7 +68,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Normal.gif" width = 400>
+        <img src = "Readme/Readme-Normal.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -89,7 +89,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-DoubleBrightness.gif" width = 400>
+        <img src = "Readme/Readme-DoubleBrightness.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -110,7 +110,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-FluorescentFlicker.gif" width = 400>
+        <img src = "Readme/Readme-FluorescentFlicker.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -131,7 +131,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-SlowStrobe.gif" width = 400>
+        <img src = "Readme/Readme-SlowStrobe.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -152,7 +152,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-GentlePulse.gif" width = 400>
+        <img src = "Readme/Readme-GentlePulse.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -173,7 +173,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-SlowStrongPulse.gif" width = 400>
+        <img src = "Readme/Readme-SlowStrongPulse.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -194,7 +194,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-SlowPulseNotFadeToBlack.gif" width = 400>
+        <img src = "Readme/Readme-SlowPulseNotFadeToBlack.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -215,7 +215,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-FastStrobe.gif" width = 400>
+        <img src = "Readme/Readme-FastStrobe.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -236,7 +236,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-UnderwaterLightMutation.gif" width = 400>
+        <img src = "Readme/Readme-UnderwaterLightMutation.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -257,7 +257,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Candle1.gif" width = 400>
+        <img src = "Readme/Readme-Candle1.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -278,7 +278,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Candle2.gif" width = 400>
+        <img src = "Readme/Readme-Candle2.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -299,7 +299,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Candle3.gif" width = 400>
+        <img src = "Readme/Readme-Candle3.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -320,7 +320,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Flicker1.gif" width = 400>
+        <img src = "Readme/Readme-Flicker1.gif" width = 400>
       </details>
     </td>
   </tr>
@@ -341,7 +341,7 @@ Here are all 15 presets available to quickly achieve flickering lights. You may 
     <td>
       <details>
         <summary>Click to show</summary>
-        <img src = "https://github.com/huchi57/LightFlicker/blob/main/Readme/Readme-Flicker2.gif" width = 400>
+        <img src = "Readme/Readme-Flicker2.gif" width = 400>
       </details>
     </td>
   </tr>
