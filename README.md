@@ -31,10 +31,10 @@ A component to make Unity's Light component flicker by a sequence of alphabets. 
 | `NormalBrightness` | `float` | The light intensity at 100% brightness. <br/>*Note: This will override the Light component's intensensity value.* |
 
 **Speed Settings**
-| Property Name      | Type    | Description                                            |
-| :---               | :---    | :---                                                   |
-| `PatternDuration`  | `float` | The duration for the pattern to iterate once.          |
-| `Lerp`             | `bool`  | Whether the light intensity should change smoothly.    |
+| Property Name      | Type    | Description                                                                              |
+| :---               | :---    | :---                                                                                     |
+| `PatternDuration`  | `float` | The duration for the pattern to iterate once.                                            |
+| `Lerp`             | `bool`  | Whether the light intensity should change smoothly using linear interpolation (lerp).    |
 
 ## `LightFlickerUtility.Preset` Enumerations
 
