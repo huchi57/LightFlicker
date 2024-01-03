@@ -17,9 +17,7 @@ public class LightFlicker : MonoBehaviour
 
     // Serialized for custom editor
     [SerializeField] [HideInInspector] private bool _playingInEditMode = false;
-#if UNITY_EDITOR
     [SerializeField] [HideInInspector] private AnimationCurve _intensityCurve = new AnimationCurve();
-#endif
 
     // Internal variables
     private Light _light = default;
